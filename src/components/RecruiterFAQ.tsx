@@ -7,7 +7,7 @@ export const RecruiterFAQ: React.FC = () => {
   const faqs = [
     {
       question: "Tam zamanlı veya hibrit pozisyonlar için hemen başlayabilir misin?",
-      answer: "Evet! 30 Haziran 2026 tarihinde Bilgisayar Mühendisliği bölümünden mezun oldum. İstanbul içi hibrit/ofis pozisyonlara veya uzaktan (remote) Junior Software Developer rollerine hemen başlama durumum mevcuttur."
+      answer: "Evet! Bilgisayar Mühendisliği (2022 – 2026) mezunuyum. İstanbul içi hibrit/ofis pozisyonlara veya uzaktan (remote) Junior Software Developer rollerine hemen başlama durumum mevcuttur."
     },
     {
       question: "Uzaktan (Remote) çalışma ve çevik (Agile) ekip tecrüben var mı?",

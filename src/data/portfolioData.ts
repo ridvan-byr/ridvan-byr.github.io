@@ -42,10 +42,10 @@ export const PERSONAL_INFO = {
   github: "https://github.com/ridvan-byr",
   linkedin: "https://linkedin.com/in/ridvanemrebayar",
   githubUsername: "ridvan-byr",
-  summary: "30 Haziran 2026 Bilgisayar Mühendisliği mezunu, web geliştirme, backend sistemleri, test otomasyonu ve yapay zeka entegrasyonlarında pratik staj deneyimine sahip Junior Yazılım Geliştirici. Temiz kod (Clean Code), sürekli öğrenme ve yazılım ekiplerine hızlı adapte olup değer katma odaklı.",
-  graduationDate: "30 Haziran 2026",
+  summary: "Bilecik Şeyh Edebali Üniversitesi Bilgisayar Mühendisliği (2022 – 2026) mezunu, web geliştirme, backend sistemleri, test otomasyonu ve yapay zeka entegrasyonlarında pratik staj deneyimine sahip Junior Yazılım Geliştirici. Temiz kod (Clean Code), sürekli öğrenme ve yazılım ekiplerine hızlı adapte olup değer katma odaklı.",
+  graduationDate: "2022 – 2026",
   stats: [
-    { label: "Seviye & Unvan", value: "Junior Software Dev", sub: "30 Haziran 2026 Mezunu" },
+    { label: "Seviye & Unvan", value: "Junior Software Dev", sub: "2022 – 2026 Mezunu" },
     { label: "Playwright E2E Suite", value: "39 Spec", sub: "5 Bulut Depolama & OAuth" },
     { label: "VS Code Extension", value: "QA Cortex", sub: "%100 Precision & Recall" },
     { label: "Teknoloji Odağı", value: ".NET & Next.js", sub: "Full-Stack & Test Automation" },

@@ -69,7 +69,7 @@ export const AboutSection: React.FC = () => {
                       <div className="text-xs text-cyan-400 font-mono">Junior Software Developer</div>
                     </div>
                     <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-[10px] font-semibold font-mono">
-                      <GraduationCap className="w-3 h-3 text-cyan-400" /> 30 Haziran 2026 Mezunu
+                      <GraduationCap className="w-3 h-3 text-cyan-400" /> 2022 – 2026 Mezunu
                     </div>
                   </div>
                 </div>
@@ -87,7 +87,7 @@ export const AboutSection: React.FC = () => {
                 <span className="text-cyan-400">#</span> Heyecanlı ve Öğrenmeye Aç Bir Junior Yazılımcı
               </h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                <b>30 Haziran 2026</b> tarihinde Bilecik Şeyh Edebali Üniversitesi Bilgisayar Mühendisliği bölümünden mezun oldum. Öğrenim hayatım ve staj dönemlerimde sadece teorik derslerle sınırlı kalmayıp; modern web teknolojileri, test otomasyon altyapıları ve yapay zeka entegrasyonlarında pratik projeler geliştirdim.
+                Bilecik Şeyh Edebali Üniversitesi Bilgisayar Mühendisliği (<b>2022 – 2026</b>) bölümünden mezun oldum. Öğrenim hayatım ve staj dönemlerimde sadece teorik derslerle sınırlı kalmayıp; modern web teknolojileri, test otomasyon altyapıları ve yapay zeka entegrasyonlarında pratik projeler geliştirdim.
               </p>
               <p className="text-slate-300 text-sm leading-relaxed">
                 <b>iCredible Technologies Inc.</b>'deki uzun dönem stajımda 39 farklı senaryoyu kapsayan Playwright test paketi hazırlayarak bulut depolama entegrasyonlarının güvenilirliğini sağladım. Açık kaynak projem <b>QA Cortex</b> ile VS Code Marketplace'te yayınlanmış bir eklenti geliştirdim. Amacım, güçlü temellerim ve hızlı öğrenme kabiliyetimle yazılım ekiplerine dinamizm katmaktır.
