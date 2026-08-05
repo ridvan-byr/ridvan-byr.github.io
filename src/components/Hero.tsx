@@ -96,8 +96,8 @@ export const Hero: React.FC = () => {
             {/* Primary Action Buttons for HR */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
               <a
-                href="/resume.pdf"
-                download
+                href="/resume.pdf?v=20260805"
+                download="RidvanEmreBayar_CV.pdf"
                 className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-xs transition-all shadow-md shadow-cyan-500/10"
               >
                 <Download className="w-4 h-4" />
