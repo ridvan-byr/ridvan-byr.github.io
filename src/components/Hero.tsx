@@ -76,12 +76,9 @@ export const Hero: React.FC = () => {
 
                 {/* Clean Status Footer */}
                 <div className="mt-3 p-3 rounded-xl bg-slate-900/90 border border-slate-800/80 text-xs font-mono space-y-1.5 shadow-inner">
-                  <div className="flex items-center gap-2 text-emerald-400 font-semibold">
-                    <span className="relative flex h-2.5 w-2.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                    </span>
-                    <span>Aktif: iCredible Technologies — Stajyer</span>
+                  <div className="flex items-center gap-2 text-slate-300 font-semibold">
+                    <Briefcase className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                    <span>Son Rol: iCredible Technologies — Stajyer</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-400 text-[11px]">
                     <GraduationCap className="w-3.5 h-3.5 text-cyan-400 shrink-0" />

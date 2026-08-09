@@ -57,8 +57,8 @@ export const EXPERIENCES: WorkExperience[] = [
     id: "icredible",
     company: "iCredible Technologies Inc.",
     role: "Software Developer Intern (Uzun Dönem)",
-    period: "Şub 2026 – Günümüz",
-    isCurrent: true,
+    period: "Şub 2026 – Ağu 2026",
+    isCurrent: false,
     location: "İstanbul, TR (Hibrit)",
     summary: ".NET (ASP.NET Core), Next.js ve PostgreSQL altyapısında full-stack web geliştirme ve Playwright test otomasyonu alanında uzun dönem staj deneyimi.",
     achievements: [
