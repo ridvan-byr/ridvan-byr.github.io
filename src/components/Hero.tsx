@@ -90,19 +90,19 @@ export const Hero: React.FC = () => {
           </motion.div>
 
           {/* Right Column (7 cols): Engineer Profile & Summary */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <motion.div variants={itemVariants}>
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <motion.div variants={itemVariants} className="w-full flex flex-col items-center lg:items-start">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 text-xs font-mono mb-4 shadow-sm">
                 <Briefcase className="w-3.5 h-3.5 text-cyan-400" />
                 <span>Junior Software Developer</span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight text-center lg:text-left">
                 {PERSONAL_INFO.name}
               </h1>
 
               {/* Dynamic Animated Role Switcher */}
-              <div className="h-8 mt-2 overflow-hidden flex items-center justify-center lg:justify-start">
+              <div className="min-h-[2.5rem] mt-2 overflow-hidden flex items-center justify-center lg:justify-start w-full">
                 <AnimatePresence mode="wait">
                   <motion.p
                     key={roleIndex}
@@ -110,9 +110,9 @@ export const Hero: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -15 }}
                     transition={{ duration: 0.4 }}
-                    className="text-base sm:text-lg font-mono text-gradient-cyan flex items-center gap-2 font-medium"
+                    className="text-xs sm:text-base md:text-lg font-mono text-gradient-cyan flex items-center justify-center lg:justify-start gap-1.5 sm:gap-2 font-medium text-center lg:text-left leading-snug"
                   >
-                    <Sparkles className="w-4 h-4 text-cyan-400" />
+                    <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 shrink-0" />
                     <span>{ROLES[roleIndex]}</span>
                   </motion.p>
                 </AnimatePresence>
@@ -120,12 +120,12 @@ export const Hero: React.FC = () => {
             </motion.div>
 
             {/* Profile Bio */}
-            <motion.p variants={itemVariants} className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            <motion.p variants={itemVariants} className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Bilecik Şeyh Edebali Üniversitesi Bilgisayar Mühendisliği (2022 – 2026) mezunuyum. Web geliştirme (.NET Core, Next.js), PostgreSQL veritabanı mimarileri ve Playwright tabanlı End-to-End (E2E) test otomasyon süreçlerinde pratik staj deneyimine sahibim. Temiz kod (Clean Code) disiplinine önem veren, hızlı öğrenen ve yazılım ekiplerine dinamizm katan bir mühendisim.
             </motion.p>
 
             {/* Direct Contact Pills */}
-            <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-2.5 text-xs text-slate-300 font-mono">
+            <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-2.5 text-xs text-slate-300 font-mono w-full">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-slate-700 transition-colors">
                 <MapPin className="w-3.5 h-3.5 text-cyan-400" />
                 <span>İstanbul, TR</span>
@@ -153,11 +153,11 @@ export const Hero: React.FC = () => {
             </motion.div>
 
             {/* Primary Action Buttons for HR */}
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2 w-full">
               <motion.a
                 whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(6,182,212,0.35)' }}
                 whileTap={{ scale: 0.95 }}
-                href="/resume.pdf?v=20260805"
+                href="/resume.pdf?v=20260809"
                 download="RidvanEmreBayar_CV.pdf"
                 className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all shadow-lg shadow-cyan-500/20"
               >

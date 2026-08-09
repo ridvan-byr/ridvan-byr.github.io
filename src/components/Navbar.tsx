@@ -105,7 +105,7 @@ export const Navbar: React.FC = () => {
             </a>
 
             <a
-              href="/resume.pdf?v=20260805"
+              href="/resume.pdf?v=20260809"
               download="RidvanEmreBayar_CV.pdf"
               className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 transition-all"
             >
@@ -140,7 +140,7 @@ export const Navbar: React.FC = () => {
           ))}
           <div className="pt-3 border-t border-slate-800 flex flex-col gap-2">
             <a
-              href="/resume.pdf?v=20260805"
+              href="/resume.pdf?v=20260809"
               download="RidvanEmreBayar_CV.pdf"
               className="flex items-center justify-center gap-2 w-full py-2 text-xs font-semibold rounded-lg bg-cyan-500 text-slate-950"
             >
