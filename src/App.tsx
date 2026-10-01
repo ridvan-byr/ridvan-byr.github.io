@@ -6,7 +6,6 @@ import { ExperienceTimeline } from './components/ExperienceTimeline';
 import { ProjectsShowcase } from './components/ProjectsShowcase';
 import { SkillsMatrix } from './components/SkillsMatrix';
 import { EducationSection } from './components/EducationSection';
-import { RecruiterFAQ } from './components/RecruiterFAQ';
 import { ContactFooter } from './components/ContactFooter';
 
 export const App: React.FC = () => {
@@ -20,7 +19,6 @@ export const App: React.FC = () => {
         <ProjectsShowcase />
         <SkillsMatrix />
         <EducationSection />
-        <RecruiterFAQ />
       </main>
       <ContactFooter />
     </div>

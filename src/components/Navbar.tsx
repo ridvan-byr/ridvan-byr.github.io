@@ -28,7 +28,6 @@ export const Navbar: React.FC = () => {
     { name: 'Projeler', href: '#projects' },
     { name: 'Yetenekler', href: '#skills' },
     { name: 'Eğitim', href: '#education' },
-    { name: 'SSS', href: '#faq' },
     { name: 'İletişim', href: '#contact' },
   ];
 
