@@ -6,20 +6,20 @@ export const RecruiterFAQ: React.FC = () => {
 
   const faqs = [
     {
-      question: "Tam zamanlı veya hibrit pozisyonlar için hemen başlayabilir misin?",
-      answer: "Evet! Bilgisayar Mühendisliği (2022 – 2026) mezunuyum. İstanbul içi hibrit/ofis pozisyonlarına veya uzaktan (remote) Junior Software Developer rollerine hemen başlama durumum mevcuttur."
+      question: "Şu an aktif olarak nerede çalışıyorsun?",
+      answer: "Ağustos 2026'dan bu yana OHO Games bünyesinde Junior Software Developer olarak görev alıyor ve aktif olarak Worksauto projesinin yazılım geliştirme süreçlerinde çalışıyorum."
     },
     {
-      question: "Uzaktan (Remote) çalışma ve çevik (Agile) ekip tecrüben var mı?",
-      answer: "Evet. Routewise ve Setgreet stajlarımı tamamen remote ekip ortamında gerçekleştirdim. Git versiyon kontrolü, PR inceleme (Code Review) süreçleri ve görev takip araçlarıyla (Jira/GitHub Projects) çalışmaya son derece alışkınım."
+      question: "Uzaktan (Remote) veya çevik (Agile) ekiplerde çalışma tecrüben var mı?",
+      answer: "Evet. Önceki ve güncel rollerimde çevik (Agile) ekip ortamlarında Git versiyon kontrolü, PR inceleme (Code Review) süreçleri ve modern görev takip araçlarıyla çalışmaktayım."
     },
     {
       question: "İngilizce iletişim gerektiren projelerde çalışabilir misin?",
       answer: "Evet, B2 seviye İngilizce yetkinliğim ile uluslararası teknik dokümanları rahatlıkla takip edebiliyor, yazılı ve sözlü teknik mülakatlara ve ekip içi toplantılara katılabiliyorum."
     },
     {
-      question: "Full-Stack geliştirme mi yoksa Test Otomasyonu (QA) mu odak alanın?",
-      answer: "Her ikisinde de pratik deneyime sahibim. .NET Core, Next.js ve PostgreSQL ile full-stack web uygulamaları geliştirirken, Playwright ile test otomasyon paketleri ve VS Code kural motorları (QA Cortex) inşa etmekten büyük keyif alıyorum."
+      question: "Geliştirme süreçlerinde asıl odak alanın nedir?",
+      answer: "Asıl odak alanım .NET Core, Next.js, React ve PostgreSQL altyapısıyla modern, performanslı full-stack web mimarileri ve RESTful API'ler geliştirmektir. Bunun yanında pratik süreçlerde edindiğim test otomasyonu ve yapay zeka entegrasyonları ile yazılım kalitesini uçtan uca destekliyorum."
     }
   ];
 

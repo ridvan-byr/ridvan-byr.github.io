@@ -35,24 +35,33 @@ export interface SkillCategory {
 export const PERSONAL_INFO = {
   name: "Rıdvan Emre Bayar",
   title: "Junior Software Developer",
-  tagline: "Full-Stack, Test Otomasyonu & Yapay Zeka Sistemleri",
+  tagline: "Full-Stack Web Geliştirme & Yapay Zeka Entegrasyonları",
   location: "İstanbul, Türkiye",
   email: "ridvanemrebayar@gmail.com",
   phone: "+90-552-374-1500",
   github: "https://github.com/ridvan-byr",
   linkedin: "https://linkedin.com/in/ridvanemrebayar",
   githubUsername: "ridvan-byr",
-  summary: "Bilecik Şeyh Edebali Üniversitesi Bilgisayar Mühendisliği (2022 – 2026) mezunu, web geliştirme, backend sistemleri, test otomasyonu ve yapay zeka entegrasyonlarında pratik staj deneyimine sahip Junior Yazılım Geliştirici. Temiz kod (Clean Code), sürekli öğrenme ve yazılım ekiplerine hızlı adapte olup değer katma odaklı.",
+  summary: "Bilecik Şeyh Edebali Üniversitesi Bilgisayar Mühendisliği (2022 – 2026) mezunu. OHO Games bünyesinde Junior Software Developer olarak Worksauto projesinin geliştirilmesinde aktif rol almaktayım. Full-stack web mimarileri (.NET Core, Next.js, React), backend servisleri, veritabanı tasarımı ve yapay zeka entegrasyonları odaklı çalışıyorum.",
   graduationDate: "2022 – 2026",
-  stats: [
-    { label: "Seviye & Unvan", value: "Junior Software Dev", sub: "2022 – 2026 Mezunu" },
-    { label: "Playwright E2E Suite", value: "39 Spec", sub: "5 Bulut Depolama & OAuth" },
-    { label: "VS Code Extension", value: "QA Cortex", sub: "%100 Precision & Recall" },
-    { label: "Teknoloji Odağı", value: ".NET & Next.js", sub: "Full-Stack & Test Automation" },
-  ]
 };
 
 export const EXPERIENCES: WorkExperience[] = [
+  {
+    id: "oho-games",
+    company: "OHO Games",
+    role: "Junior Software Developer",
+    period: "Ağu 2026 – Günümüz",
+    isCurrent: true,
+    location: "İstanbul, TR",
+    summary: "OHO Games bünyesinde Worksauto projesinin yazılım geliştirme süreçlerinde aktif rol alma.",
+    achievements: [
+      "Worksauto projesi kapsamında modern web arayüzleri, API mimarisi ve iş mantığı modüllerinin geliştirilmesi.",
+      "Kullanıcı deneyimini ve sistem performansını artıran ölçeklenebilir full-stack mimari çözümleri üretme.",
+      "Ekip içi çevik (Agile) geliştirme, kod inceleme ve sürekli entegrasyon süreçlerine aktif katılım."
+    ],
+    techStack: ["Next.js", "React.js", "TypeScript", ".NET Core", "PostgreSQL", "RESTful API", "Git"]
+  },
   {
     id: "icredible",
     company: "iCredible Technologies Inc.",
@@ -60,16 +69,16 @@ export const EXPERIENCES: WorkExperience[] = [
     period: "Şub 2026 – Ağu 2026",
     isCurrent: false,
     location: "İstanbul, TR (Hibrit)",
-    summary: ".NET (ASP.NET Core), Next.js ve PostgreSQL altyapısında full-stack web geliştirme ve Playwright test otomasyonu alanında uzun dönem staj deneyimi.",
+    summary: ".NET (ASP.NET Core), Next.js ve PostgreSQL altyapısında full-stack web geliştirme ve API entegrasyonları alanında uzun dönem staj deneyimi.",
     achievements: [
       ".NET (ASP.NET Core), Next.js ve PostgreSQL kullanarak uçtan uca full-stack web uygulaması geliştirme süreçlerinde yer aldı.",
       "Frontend entegrasyonu sağlayan yüksek performanslı RESTful API'ler tasarladı ve uyguladı.",
-      "PostgreSQL veritabanı tasarımı, şema migrasyonları ve sorgu süreçlerine katkı sağladı.",
+      "PostgreSQL veritabanı tasarımı, şema migrasyonları ve sorgu optimizasyonu süreçlerine katkı sağladı.",
       "Geliştirme ortamlarında tutarlılık adına uygulamaları Docker ile konteynerize etti.",
-      "Auth, OAuth (GitHub/Bitbucket), 5 bulut depolama sağlayıcısı (AWS S3, Azure, GDrive, OneDrive, Huawei OBS) ve audit-log doğrulamasını kapsayan 39-spec Playwright E2E test paketini (POM & API mocking) oluşturdu ve sürdürülebilirliğini sağladı.",
-      "Postman kullanarak API doğrulama ve otomasyon testlerini gerçekleştirdi."
+      "OAuth doğrulaması ve bulut depolama entegrasyonlarını kapsayan uçtan uca API ve sistem akışlarını test etti.",
+      "Postman kullanarak API doğrulama ve otomasyon süreçlerini gerçekleştirdi."
     ],
-    techStack: [".NET Core", "ASP.NET Core", "Next.js", "PostgreSQL", "Docker", "Playwright", "TypeScript", "Postman", "OAuth"]
+    techStack: [".NET Core", "ASP.NET Core", "Next.js", "PostgreSQL", "Docker", "TypeScript", "Postman", "OAuth"]
   },
   {
     id: "routewise",

@@ -54,9 +54,6 @@ export const Navbar: React.FC = () => {
               <span className="font-semibold text-zinc-100 group-hover:text-white transition-colors text-sm">
                 {PERSONAL_INFO.name}
               </span>
-              <span className="hidden sm:inline-block text-[11px] font-mono text-zinc-400 bg-[#0f1422] border border-[#1e2638] px-2 py-0.5 rounded">
-                Junior Dev
-              </span>
             </div>
           </a>
 
