@@ -28,45 +28,45 @@ export const Navbar: React.FC = () => {
     { name: 'Projeler', href: '#projects' },
     { name: 'Yetenekler', href: '#skills' },
     { name: 'Eğitim', href: '#education' },
+    { name: 'SSS', href: '#faq' },
     { name: 'İletişim', href: '#contact' },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
         scrolled
-          ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 py-3 shadow-lg'
-          : 'bg-transparent py-5'
+          ? 'bg-[#090d16]/95 backdrop-blur-md border-b border-[#1e2638] py-2.5 shadow-sm'
+          : 'bg-transparent py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between">
           
           {/* Logo / Profile Avatar */}
           <a href="#about" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-xl p-[1.5px] bg-gradient-to-tr from-cyan-400 to-violet-600 shadow-md">
-              <img
-                src="/profile.jpg"
-                alt={PERSONAL_INFO.name}
-                className="w-full h-full object-cover object-center rounded-[9px]"
-              />
-            </div>
-
-            <div>
-              <span className="font-bold text-slate-100 group-hover:text-cyan-400 transition-colors block text-sm leading-tight">
+            <img
+              src="/profile.jpg"
+              alt={PERSONAL_INFO.name}
+              className="w-8 h-8 rounded-full object-cover border border-[#1e2638] group-hover:border-zinc-500 transition-colors"
+            />
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-zinc-100 group-hover:text-white transition-colors text-sm">
                 {PERSONAL_INFO.name}
               </span>
-              <span className="text-[11px] text-slate-400 font-mono">Junior Software Developer</span>
+              <span className="hidden sm:inline-block text-[11px] font-mono text-zinc-400 bg-[#0f1422] border border-[#1e2638] px-2 py-0.5 rounded">
+                Junior Dev
+              </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-1 bg-[#0f1422]/70 border border-[#1e2638] px-3 py-1 rounded-full text-xs font-medium">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs font-medium text-slate-300 hover:text-cyan-400 transition-colors"
+                className="px-3 py-1 text-zinc-400 hover:text-zinc-100 hover:bg-[#141b2d] rounded-full transition-colors"
               >
                 {link.name}
               </a>
@@ -74,13 +74,13 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Actions */}
-          <div className="hidden lg:flex items-center gap-2.5">
+          <div className="hidden lg:flex items-center gap-2">
             <button
               onClick={copyEmail}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-slate-900 border border-slate-800 rounded-lg text-slate-300 hover:text-cyan-400 hover:border-slate-700 transition-all"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-mono bg-[#0f1422] border border-[#1e2638] rounded-md text-zinc-300 hover:text-white hover:border-zinc-700 transition-colors cursor-pointer"
               title="E-posta Adresini Kopyala"
             >
-              {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Mail className="w-3.5 h-3.5 text-slate-400" />}
+              {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Mail className="w-3.5 h-3.5 text-zinc-400" />}
               <span>{copiedEmail ? 'Kopyalandı' : 'E-posta'}</span>
             </button>
 
@@ -88,7 +88,7 @@ export const Navbar: React.FC = () => {
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 text-slate-400 hover:text-white hover:bg-slate-900 rounded-lg transition-colors"
+              className="p-1.5 text-zinc-400 hover:text-white hover:bg-[#0f1422] border border-transparent hover:border-[#1e2638] rounded-md transition-colors"
               aria-label="GitHub Profil"
             >
               <GithubIcon className="w-4 h-4" />
@@ -98,7 +98,7 @@ export const Navbar: React.FC = () => {
               href={PERSONAL_INFO.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 text-slate-400 hover:text-white hover:bg-slate-900 rounded-lg transition-colors"
+              className="p-1.5 text-zinc-400 hover:text-white hover:bg-[#0f1422] border border-transparent hover:border-[#1e2638] rounded-md transition-colors"
               aria-label="LinkedIn Profil"
             >
               <LinkedinIcon className="w-4 h-4" />
@@ -107,7 +107,7 @@ export const Navbar: React.FC = () => {
             <a
               href="/resume.pdf?v=20260809"
               download="RidvanEmreBayar_CV.pdf"
-              className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 transition-all"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md bg-zinc-100 hover:bg-white text-zinc-950 transition-colors shadow-xs"
             >
               <Download className="w-3.5 h-3.5" />
               <span>CV (PDF)</span>
@@ -117,35 +117,42 @@ export const Navbar: React.FC = () => {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-slate-300 hover:text-white"
+            className="md:hidden p-1.5 text-zinc-400 hover:text-white rounded-md border border-[#1e2638] bg-[#0f1422]"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Dropdown Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-4 pb-6 mt-3 space-y-3">
+        <div className="md:hidden bg-[#090d16] border-b border-[#1e2638] px-4 pt-3 pb-5 space-y-2">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-slate-200 hover:text-cyan-400 text-sm font-medium py-1.5"
+              className="block text-zinc-300 hover:text-white text-sm font-medium py-1.5 border-b border-[#1e2638]/50"
             >
               {link.name}
             </a>
           ))}
-          <div className="pt-3 border-t border-slate-800 flex flex-col gap-2">
+          <div className="pt-3 flex items-center justify-between gap-2">
+            <button
+              onClick={copyEmail}
+              className="flex-1 flex items-center justify-center gap-1.5 py-2 text-xs font-mono bg-[#0f1422] border border-[#1e2638] rounded-md text-zinc-300"
+            >
+              {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Mail className="w-3.5 h-3.5 text-zinc-400" />}
+              <span>{copiedEmail ? 'Kopyalandı' : 'E-posta'}</span>
+            </button>
             <a
               href="/resume.pdf?v=20260809"
               download="RidvanEmreBayar_CV.pdf"
-              className="flex items-center justify-center gap-2 w-full py-2 text-xs font-semibold rounded-lg bg-cyan-500 text-slate-950"
+              className="flex-1 flex items-center justify-center gap-1.5 py-2 text-xs font-medium rounded-md bg-zinc-100 text-zinc-950"
             >
               <Download className="w-3.5 h-3.5" />
-              <span>Özgeçmişi İndir (PDF)</span>
+              <span>CV İndir</span>
             </a>
           </div>
         </div>

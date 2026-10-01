@@ -1,27 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import { Download, Mail, MapPin, Phone, Check, GraduationCap, Briefcase, Sparkles } from 'lucide-react';
+import { Download, Mail, MapPin, Check, GraduationCap, ArrowUpRight, Terminal } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
-import { SpotlightCard } from './SpotlightCard';
-
-const ROLES = [
-  'Full-Stack Geliştirme (.NET Core & React)',
-  'E2E Test Otomasyonu (Playwright & C#)',
-  'Yapay Zeka & AI Agent Entegrasyonları',
-  'PostgreSQL & Performanslı Mimari'
-];
 
 export const Hero: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [roleIndex, setRoleIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setRoleIndex((prev) => (prev + 1) % ROLES.length);
-    }, 3500);
-    return () => clearInterval(timer);
-  }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
@@ -29,170 +12,148 @@ export const Hero: React.FC = () => {
     setTimeout(() => setCopiedEmail(false), 2000);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.35, ease: 'easeOut' as const },
-    },
-  };
-
-
   return (
-    <section id="about" className="relative pt-28 pb-16 md:pt-36 md:pb-20 overflow-hidden">
-      {/* Background Radial Light Effect */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-r from-cyan-500/15 via-violet-500/15 to-pink-500/10 blur-[130px] rounded-full pointer-events-none" />
+    <section id="about" className="pt-28 pb-16 md:pt-36 md:pb-20 border-b border-[#1e2638]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        {/* Top Status Badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0f1422] border border-[#1e2638] text-xs font-mono text-zinc-300 mb-8">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>Junior Yazılım Geliştirici &middot; İş Fırsatlarına Açık</span>
+        </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
-        >
-          {/* Left Column (5 cols): Photo & Quick Status with Spotlight 3D Tilt */}
-          <motion.div variants={itemVariants} className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-sm">
-              <SpotlightCard className="!p-3 border border-slate-800 shadow-2xl rounded-3xl" spotlightColor="rgba(34, 211, 238, 0.2)">
-                <div className="relative rounded-2xl overflow-hidden group">
-                  <img
-                    src="/profile.jpg"
-                    alt={PERSONAL_INFO.name}
-                    className="w-full h-[400px] object-cover object-center rounded-2xl filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          
+          {/* Main Bio Column */}
+          <div className="lg:col-span-8 space-y-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+              {PERSONAL_INFO.name}
+            </h1>
 
-                {/* Clean Status Footer */}
-                <div className="mt-3 p-3 rounded-xl bg-slate-900/90 border border-slate-800/80 text-xs font-mono space-y-1.5 shadow-inner">
-                  <div className="flex items-center gap-2 text-slate-300 font-semibold">
-                    <Briefcase className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                    <span>Son Rol: iCredible Technologies — Stajyer</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-slate-400 text-[11px]">
-                    <GraduationCap className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                    <span>Bilgisayar Müh. (2022 – 2026)</span>
-                  </div>
-                </div>
-              </SpotlightCard>
-            </div>
-          </motion.div>
+            <p className="text-lg sm:text-xl text-zinc-300 font-normal leading-relaxed">
+              Full-Stack Web Geliştirme (<span className="text-zinc-100 font-medium">.NET Core & Next.js</span>), 
+              güvenilir <span className="text-zinc-100 font-medium">Playwright E2E Test Otomasyonu</span> ve 
+              yapay zeka ajan entegrasyonları üzerine çalışan yazılım geliştirici.
+            </p>
 
-          {/* Right Column (7 cols): Engineer Profile & Summary */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
-            <motion.div variants={itemVariants} className="w-full flex flex-col items-center lg:items-start">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 text-xs font-mono mb-4 shadow-sm">
-                <Briefcase className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Junior Software Developer</span>
-              </div>
+            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
+              Bilecik Şeyh Edebali Üniversitesi Bilgisayar Mühendisliği (2022 – 2026) mezunuyum. 
+              iCredible Technologies'de full-stack web API'leri (.NET & PostgreSQL) ve 39-spec Playwright E2E test paketi mimarisi geliştirdim. 
+              VS Code Marketplace üzerinde yayınlanan <strong className="text-zinc-200 font-medium">QA Cortex</strong> açık kaynak projesinin geliştiricisiyim.
+            </p>
 
-              <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight text-center lg:text-left">
-                {PERSONAL_INFO.name}
-              </h1>
-
-              {/* Dynamic Animated Role Switcher */}
-              <div className="min-h-[2.5rem] mt-2 overflow-hidden flex items-center justify-center lg:justify-start w-full">
-                <AnimatePresence mode="wait">
-                  <motion.p
-                    key={roleIndex}
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -15 }}
-                    transition={{ duration: 0.4 }}
-                    className="text-xs sm:text-base md:text-lg font-mono text-gradient-cyan flex items-center justify-center lg:justify-start gap-1.5 sm:gap-2 font-medium text-center lg:text-left leading-snug"
-                  >
-                    <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 shrink-0" />
-                    <span>{ROLES[roleIndex]}</span>
-                  </motion.p>
-                </AnimatePresence>
-              </div>
-            </motion.div>
-
-            {/* Profile Bio */}
-            <motion.p variants={itemVariants} className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Bilecik Şeyh Edebali Üniversitesi Bilgisayar Mühendisliği (2022 – 2026) mezunuyum. Web geliştirme (.NET Core, Next.js), PostgreSQL veritabanı mimarileri ve Playwright tabanlı End-to-End (E2E) test otomasyon süreçlerinde pratik staj deneyimine sahibim. Temiz kod (Clean Code) disiplinine önem veren, hızlı öğrenen ve yazılım ekiplerine dinamizm katan bir mühendisim.
-            </motion.p>
-
-            {/* Direct Contact Pills */}
-            <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-2.5 text-xs text-slate-300 font-mono w-full">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-slate-700 transition-colors">
-                <MapPin className="w-3.5 h-3.5 text-cyan-400" />
+            {/* Contact & Meta Badges */}
+            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-zinc-400 pt-1">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#0f1422] border border-[#1e2638]">
+                <MapPin className="w-3.5 h-3.5 text-zinc-400" />
                 <span>İstanbul, TR</span>
               </div>
 
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#0f1422] border border-[#1e2638]">
+                <GraduationCap className="w-3.5 h-3.5 text-zinc-400" />
+                <span>BŞEÜ Bilgisayar Müh. (2022 – 2026)</span>
+              </div>
+
+              <button
                 onClick={handleCopyEmail}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-cyan-500/40 transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#0f1422] border border-[#1e2638] text-zinc-300 hover:text-white hover:border-zinc-600 transition-colors cursor-pointer"
               >
-                {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Mail className="w-3.5 h-3.5 text-cyan-400" />}
+                {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Mail className="w-3.5 h-3.5 text-zinc-400" />}
                 <span>{copiedEmail ? 'E-posta Kopyalandı' : PERSONAL_INFO.email}</span>
-              </motion.button>
+              </button>
+            </div>
 
-              <motion.a
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                href={`tel:${PERSONAL_INFO.phone}`}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-cyan-500/40 transition-colors"
-              >
-                <Phone className="w-3.5 h-3.5 text-cyan-400" />
-                <span>{PERSONAL_INFO.phone}</span>
-              </motion.a>
-            </motion.div>
-
-            {/* Primary Action Buttons for HR */}
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2 w-full">
-              <motion.a
-                whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(6,182,212,0.35)' }}
-                whileTap={{ scale: 0.95 }}
+            {/* Call to Actions */}
+            <div className="flex flex-wrap items-center gap-3 pt-3">
+              <a
                 href="/resume.pdf?v=20260809"
                 download="RidvanEmreBayar_CV.pdf"
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all shadow-lg shadow-cyan-500/20"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-md bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs sm:text-sm transition-colors shadow-xs"
               >
                 <Download className="w-4 h-4" />
                 <span>Özgeçmişi İndir (PDF)</span>
-              </motion.a>
+              </a>
 
-              <motion.a
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-                href={PERSONAL_INFO.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 text-slate-200 text-xs font-semibold transition-all"
-              >
-                <LinkedinIcon className="w-4 h-4 text-blue-400" />
-                <span>LinkedIn Profil</span>
-              </motion.a>
-
-              <motion.a
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
+              <a
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 text-slate-200 text-xs font-semibold transition-all"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-md bg-[#0f1422] hover:bg-[#141b2d] border border-[#1e2638] hover:border-zinc-700 text-zinc-200 text-xs sm:text-sm font-medium transition-colors"
               >
-                <GithubIcon className="w-4 h-4 text-slate-300" />
+                <GithubIcon className="w-4 h-4" />
                 <span>GitHub Repoları</span>
-              </motion.a>
-            </motion.div>
+                <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500" />
+              </a>
+
+              <a
+                href={PERSONAL_INFO.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-md bg-[#0f1422] hover:bg-[#141b2d] border border-[#1e2638] hover:border-zinc-700 text-zinc-200 text-xs sm:text-sm font-medium transition-colors"
+              >
+                <LinkedinIcon className="w-4 h-4 text-blue-400" />
+                <span>LinkedIn</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500" />
+              </a>
+            </div>
           </div>
-        </motion.div>
+
+          {/* Right Card Column: Clean Profile Image & Key Metrics */}
+          <div className="lg:col-span-4 flex flex-col gap-4">
+            <div className="rounded-xl overflow-hidden border border-[#1e2638] bg-[#0f1422] p-2">
+              <img
+                src="/profile.jpg"
+                alt={PERSONAL_INFO.name}
+                className="w-full aspect-square object-cover rounded-lg filter contrast-[1.02]"
+              />
+              <div className="p-3 pt-3.5 space-y-2 border-t border-[#1e2638]/70 mt-2 font-mono text-xs text-zinc-400">
+                <div className="flex items-center justify-between">
+                  <span className="text-zinc-500">Son Deneyim</span>
+                  <span className="text-zinc-200 font-medium">iCredible Technologies</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-zinc-500">Rol</span>
+                  <span className="text-zinc-200">Software Dev Intern</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-zinc-500">Lokasyon</span>
+                  <span className="text-zinc-300">İstanbul, TR</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Metrics Strip */}
+            <div className="p-4 rounded-xl border border-[#1e2638] bg-[#0f1422] space-y-3 font-mono text-xs">
+              <div className="flex items-center gap-2 text-zinc-300 font-medium">
+                <Terminal className="w-3.5 h-3.5 text-zinc-400" />
+                <span>Öne Çıkan Mühendislik Metrikleri</span>
+              </div>
+              <div className="grid grid-cols-2 gap-2 pt-1">
+                <div className="p-2.5 rounded-lg bg-[#090d16] border border-[#1e2638]">
+                  <div className="text-zinc-100 font-semibold text-sm">39 Spec</div>
+                  <div className="text-zinc-500 text-[11px] mt-0.5">Playwright E2E Suite</div>
+                </div>
+                <div className="p-2.5 rounded-lg bg-[#090d16] border border-[#1e2638]">
+                  <div className="text-zinc-100 font-semibold text-sm">%100 Test</div>
+                  <div className="text-zinc-500 text-[11px] mt-0.5">Precision & Recall</div>
+                </div>
+                <div className="p-2.5 rounded-lg bg-[#090d16] border border-[#1e2638]">
+                  <div className="text-zinc-100 font-semibold text-sm">.NET & Next.js</div>
+                  <div className="text-zinc-500 text-[11px] mt-0.5">Full-Stack Altyapı</div>
+                </div>
+                <div className="p-2.5 rounded-lg bg-[#090d16] border border-[#1e2638]">
+                  <div className="text-zinc-100 font-semibold text-sm">VS Code Tool</div>
+                  <div className="text-zinc-500 text-[11px] mt-0.5">QA Cortex Ext.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );
 };
-
